@@ -1,5 +1,10 @@
 import React from 'react';
 
+export const metadata = {
+    title: 'Movies Details'
+  }
+
+
 const SinglePage = async ({ params }) => {
 
     const id = params.id;
@@ -8,7 +13,7 @@ const SinglePage = async ({ params }) => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'f9736dfe82msh53d1affbac222fap10d440jsnf565172baefc',
+            'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
             'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
         }
 

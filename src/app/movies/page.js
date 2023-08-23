@@ -2,6 +2,10 @@ import Image from 'next/image';
 import React from 'react';
 import MoviesCard from './MoviesCard';
 
+export const metadata = {
+    title: 'All Movies'
+  }
+
 const MoviesPage = async () => {
 
     await new Promise(resolve => setTimeout(resolve, 2000));
@@ -10,7 +14,7 @@ const MoviesPage = async () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'f9736dfe82msh53d1affbac222fap10d440jsnf565172baefc',
+            'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
             'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
         }
     };

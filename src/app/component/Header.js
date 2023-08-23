@@ -4,24 +4,37 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <header class="text-gray-400 bg-gray-900 body-font">
-            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                <Link href="/">
-                    <Image width={150} height={30} src="/Movieflix-logo.png" alt="Logo" />
+
+        <nav class="bg-slate-900 border-gray-200 dark:bg-gray-900">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <Link href="/" class="flex items-center">
+                    <Image width={150} height={150} src="/Movieflix-logo.png" class="h-8 mr-3" alt="Movieflix-logo" />
                 </Link>
-                <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <Link href='/' class="mr-5 hover:text-white">Home</Link>
-                    <Link href='/movies' class="mr-5 hover:text-white">Movies</Link>
-                    <Link href='/about' class="mr-5 hover:text-white">About</Link>
-                    <a class="mr-5 hover:text-white">Fourth Link</a>
-                </nav>
-                <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
                     </svg>
                 </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4  md:flex-row md:space-x-8 md:mt-0">
+                        <li>
+                            <Link href="/" class="block py-2 pl-3 pr-4 text-white" aria-current="page">Home</Link>
+                        </li>
+                        <li>
+                            <Link href="/movies" class="block py-2 pl-3 pr-4 text-white" >Movies</Link>
+                        </li>
+                        <li>
+                            <Link href="/contact" class="block py-2 pl-3 pr-4 text-white" >Contact</Link>
+                        </li>
+                        <li>
+                            <Link href="/about" class="block py-2 pl-3 pr-4 text-white" >About</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </header>
+        </nav>
+
     );
 };
 
